@@ -31,8 +31,8 @@ test_big_endian(PLATFORM_IS_BIGENDIAN)
 option(BUILD_HAL "Build the platform abstraction layer (HAL)" ON)
 option(BUILD_COMMON "Build common code (shared with other libraries - e.g. libiec61850)" ON)
 
-option(BUILD_EXAMPLES "Build the examples" ON)
-option(BUILD_TESTS "Build the tests" ON)
+option(BUILD_EXAMPLES "Build the examples" OFF)
+option(BUILD_TESTS "Build the tests" OFF)
 
 if(BUILD_HAL)
 
@@ -99,6 +99,10 @@ INSTALL(FILES ${API_HEADERS} DESTINATION include/lib60870 COMPONENT Development)
 
 IF(EXISTS "${CMAKE_ROOT}/Modules/CPack.cmake")
 INCLUDE(InstallRequiredSystemLibraries)
+
+if(BUILD_PYTHON_BINDINGS)
+    add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/pyiec104)
+endif(BUILD_PYTHON_BINDINGS)
  
 SET(CPACK_PACKAGE_DESCRIPTION "IEC 60870-5-101/104 master/slave library")
 SET(CPACK_PACKAGE_DESCRIPTION_SUMMARY "IEC 60870-5-101/104 master/slave library")

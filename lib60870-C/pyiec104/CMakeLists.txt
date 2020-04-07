@@ -15,9 +15,9 @@ set(CMAKE_SWIG_FLAGS "")
 set_property(SOURCE iec104.i PROPERTY CPLUSPLUS ON)
 
 if(WIN32)
-    set(LIBS iec104 ws2_32)
+    set(LIBS lib60870 ws2_32)
 else()
-    set(LIBS iec104-shared)
+    set(LIBS lib60870-shared)
 endif()
 
 if(${CMAKE_VERSION} VERSION_LESS 3.8)

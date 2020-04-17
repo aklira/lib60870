@@ -204,9 +204,9 @@ InformationObject InformationObject_create(int ioa, int value)
     return io; 
 }
 
-void InformationObject_destroy(InformationObject self)
+void InformationObject_delete(InformationObject io)
 {
-    InformationObject_destroy(self);
+    InformationObject_destroy(io);
 }
 %}
 
@@ -216,4 +216,4 @@ CS101_ASDUHandler asduHandler_create();
 CS104_ConnectionRequestHandler connectionRequestHandler_create();
 CS104_ConnectionEventHandler connectionEventHandler_create();
 InformationObject InformationObject_create(int, int);
-void InformationObject_destroy(InformationObject);
+void InformationObject_delete(InformationObject);

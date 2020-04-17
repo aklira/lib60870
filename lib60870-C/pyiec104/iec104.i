@@ -5,6 +5,7 @@
 
 
 %include "stdint.i"
+%include "server.i"
 
 %{
 /* #include "cs101_information_objects.h" */

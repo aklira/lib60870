@@ -1,6 +1,7 @@
 // File : server.i
 %{
 #include "cs104_slave.h"
+#include "cs101_information_objects.h"
 #include "hal_thread.h"
 #include "hal_time.h"
 
@@ -197,6 +198,16 @@ CS104_ConnectionEventHandler connectionEventHandler_create()
     return (CS104_ConnectionEventHandler) connectionEventHandler;
 }
 
+InformationObject InformationObject_create(int ioa, int value)
+{
+    InformationObject io = (InformationObject) MeasuredValueScaled_create(NULL, ioa, value, IEC60870_QUALITY_GOOD);
+    return io; 
+}
+
+void InformationObject_destroy(InformationObject self)
+{
+    InformationObject_destroy(self);
+}
 %}
 
 CS101_ClockSynchronizationHandler clockSyncHandler_create();
@@ -204,3 +215,5 @@ CS101_InterrogationHandler interrogationHandler_create();
 CS101_ASDUHandler asduHandler_create();
 CS104_ConnectionRequestHandler connectionRequestHandler_create();
 CS104_ConnectionEventHandler connectionEventHandler_create();
+InformationObject InformationObject_create(int, int);
+void InformationObject_destroy(InformationObject);

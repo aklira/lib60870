@@ -8,7 +8,7 @@
 %include "server.i"
 
 %{
-/* #include "cs101_information_objects.h" */
+#include "cs101_information_objects.h"
 /* #include "cs101_master.h" */
 #include "cs101_slave.h"
 #include "cs104_connection.h"
@@ -31,7 +31,7 @@
 /* #include "serial_transceiver_ft_1_2.h" */
 %}
 
-/* %include "cs101_information_objects.h" */
+%include "cs101_information_objects.h"
 /* %include "cs101_master.h" */
 %include "iec60870_common.h"
 %include "iec60870_master.h"

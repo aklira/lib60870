@@ -203,11 +203,6 @@ InformationObject InformationObject_create(int ioa, int value)
     InformationObject io = (InformationObject) MeasuredValueScaled_create(NULL, ioa, value, IEC60870_QUALITY_GOOD);
     return io; 
 }
-
-void InformationObject_delete(InformationObject io)
-{
-    InformationObject_destroy(io);
-}
 %}
 
 CS101_ClockSynchronizationHandler clockSyncHandler_create();
@@ -216,4 +211,3 @@ CS101_ASDUHandler asduHandler_create();
 CS104_ConnectionRequestHandler connectionRequestHandler_create();
 CS104_ConnectionEventHandler connectionEventHandler_create();
 InformationObject InformationObject_create(int, int);
-void InformationObject_delete(InformationObject);

@@ -56,6 +56,25 @@ asduReceivedHandler (void* parameter, int address, CS101_ASDU asdu)
             MeasuredValueScaledWithCP56Time2a_destroy(io);
         }
     }
+    else if (CS101_ASDU_getTypeID(asdu) == M_ME_NB_1) {
+
+        printf("  measured scaled values:\n");
+
+        int i;
+
+        for (i = 0; i < CS101_ASDU_getNumberOfElements(asdu); i++) {
+
+            MeasuredValueScaled io =
+                    (MeasuredValueScaled) CS101_ASDU_getElement(asdu, i);
+
+            printf("    IOA: %i value: %i\n",
+                    InformationObject_getObjectAddress((InformationObject) io),
+                    MeasuredValueScaled_getValue((MeasuredValueScaled) io)
+            );
+
+            MeasuredValueScaled_destroy(io);
+        }
+    }
     else if (CS101_ASDU_getTypeID(asdu) == M_SP_NA_1) {
         printf("  single point information:\n");
 

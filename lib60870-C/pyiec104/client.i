@@ -1,4 +1,4 @@
-// File : server.i
+// File : client.i
 %{
 #include "cs104_connection.h"
 #include "hal_time.h"

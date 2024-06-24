@@ -20,6 +20,7 @@
 ## Author: Mark Riddoch, Akli Rahmoun
 ##
 
+git config --global http.sslverify false
 git clone https://github.com/mz-automation/lib60870.git
 cd lib60870/lib60870-C
 cd dependencies

@@ -26,4 +26,4 @@ RUN chmod +x /tmp/server-iec104_build.sh && \
 
 EXPOSE 2404
 
-CMD ["~/lib60870/lib60870-C/examples/cs104_server/simple_server"]
+CMD ["./lib60870/lib60870-C/examples/cs104_server/simple_server"]

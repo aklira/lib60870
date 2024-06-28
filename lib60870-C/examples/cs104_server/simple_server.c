@@ -287,31 +287,29 @@ main(int argc, char** argv)
         Thread_sleep(1000);
 
         CS101_ASDU newAsdu = CS101_ASDU_create(alParams, false, CS101_COT_PERIODIC, 0, 1, false, false);
-
         InformationObject io = (InformationObject) MeasuredValueScaled_create(NULL, 110, scaledValue, IEC60870_QUALITY_GOOD);
+        CS101_ASDU_addInformationObject(newAsdu, io);
 
         CS101_ASDU_addInformationObject(newAsdu, io = (InformationObject) MeasuredValueScaled_create(NULL, 500, scaledValue++, IEC60870_QUALITY_GOOD));
-        CS101_ASDU_addInformationObject(newAsdu, (InformationObject) MeasuredValueScaled_create((MeasuredValueScaled) io, 501, scaledValue++, IEC60870_QUALITY_GOOD));
-        CS101_ASDU_addInformationObject(newAsdu, (InformationObject) MeasuredValueScaled_create((MeasuredValueScaled) io, 502, scaledValue++, IEC60870_QUALITY_GOOD));
-        CS101_ASDU_addInformationObject(newAsdu, (InformationObject) MeasuredValueScaled_create((MeasuredValueScaled) io, 503, scaledValue++, IEC60870_QUALITY_GOOD));
-        CS101_ASDU_addInformationObject(newAsdu, (InformationObject) MeasuredValueScaled_create((MeasuredValueScaled) io, 504, scaledValue++, IEC60870_QUALITY_GOOD));
-        CS101_ASDU_addInformationObject(newAsdu, (InformationObject) MeasuredValueScaled_create((MeasuredValueScaled) io, 505, scaledValue++, IEC60870_QUALITY_GOOD));
-        CS101_ASDU_addInformationObject(newAsdu, (InformationObject) MeasuredValueScaled_create((MeasuredValueScaled) io, 506, scaledValue++, IEC60870_QUALITY_GOOD));
-        CS101_ASDU_addInformationObject(newAsdu, (InformationObject) MeasuredValueScaled_create((MeasuredValueScaled) io, 507, scaledValue++, IEC60870_QUALITY_GOOD));
-        CS101_ASDU_addInformationObject(newAsdu, (InformationObject) MeasuredValueScaled_create((MeasuredValueScaled) io, 508, scaledValue++, IEC60870_QUALITY_GOOD));
-        CS101_ASDU_addInformationObject(newAsdu, (InformationObject) MeasuredValueScaled_create((MeasuredValueScaled) io, 509, scaledValue++, IEC60870_QUALITY_GOOD));
-        CS101_ASDU_addInformationObject(newAsdu, (InformationObject) MeasuredValueScaled_create((MeasuredValueScaled) io, 510, scaledValue++, IEC60870_QUALITY_GOOD));
-        
-        scaledValue++;
-
-        //CS101_ASDU_addInformationObject(newAsdu, io);
+        CS101_ASDU_addInformationObject(newAsdu, (InformationObject) MeasuredValueScaled_create(NULL, 501, scaledValue++, IEC60870_QUALITY_GOOD));
+        CS101_ASDU_addInformationObject(newAsdu, (InformationObject) MeasuredValueScaled_create(NULL, 502, scaledValue++, IEC60870_QUALITY_GOOD));
+        CS101_ASDU_addInformationObject(newAsdu, (InformationObject) MeasuredValueScaled_create(NULL, 503, scaledValue++, IEC60870_QUALITY_GOOD));
+        CS101_ASDU_addInformationObject(newAsdu, (InformationObject) MeasuredValueScaled_create(NULL, 504, scaledValue++, IEC60870_QUALITY_GOOD));
+        CS101_ASDU_addInformationObject(newAsdu, (InformationObject) MeasuredValueScaled_create(NULL, 505, scaledValue++, IEC60870_QUALITY_GOOD));
+        CS101_ASDU_addInformationObject(newAsdu, (InformationObject) MeasuredValueScaled_create(NULL, 506, scaledValue++, IEC60870_QUALITY_GOOD));
+        CS101_ASDU_addInformationObject(newAsdu, (InformationObject) MeasuredValueScaled_create(NULL, 507, scaledValue++, IEC60870_QUALITY_GOOD));
+        CS101_ASDU_addInformationObject(newAsdu, (InformationObject) MeasuredValueScaled_create(NULL, 508, scaledValue++, IEC60870_QUALITY_GOOD));
+        CS101_ASDU_addInformationObject(newAsdu, (InformationObject) MeasuredValueScaled_create(NULL, 509, scaledValue++, IEC60870_QUALITY_GOOD));
+        CS101_ASDU_addInformationObject(newAsdu, (InformationObject) MeasuredValueScaled_create(NULL, 510, scaledValue++, IEC60870_QUALITY_GOOD));
 
         InformationObject_destroy(io);
-
+        
         /* Add ASDU to slave event queue */
         CS104_Slave_enqueueASDU(slave, newAsdu);
-
         CS101_ASDU_destroy(newAsdu);
+
+        scaledValue++;
+
     }
 
     CS104_Slave_stop(slave);

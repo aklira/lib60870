@@ -20,18 +20,5 @@
 ## Author: Mark Riddoch, Akli Rahmoun
 ##
 
-git config --global http.sslverify false
-git clone https://github.com/mz-automation/lib60870.git
-cd lib60870/lib60870-C
-cd dependencies
-wget https://github.com/Mbed-TLS/mbedtls/archive/refs/tags/v2.28.8.tar.gz
-tar xf v2.28.8.tar.gz
-mv mbedtls-2.28.2/ mbedtls-2.28
-cd ..
-mkdir build
-cd build
-cmake -DBUILD_TESTS=NO -DBUILD_EXAMPLES=NO ..
-make
-sudo make install
-cd ../examples/cs104_server
+cd /lib60870/lib60870-C/examples/cs104_server/
 make

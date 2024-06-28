@@ -3,6 +3,6 @@ services:
   iec104server:
     image: "ghcr.io/aklira/fledgepower/iec104server:latest"
     deploy:
-       replicas: 2
+       replicas: 151
     ports:
-       - "2404-2405:2404"
+       - "2404-2555:2404"

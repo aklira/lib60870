@@ -1,1 +1,0 @@
-/usr/bin/cc -g -rdynamic CMakeFiles/cs104_server.dir/simple_server.o -o cs104_server  -llib60870 

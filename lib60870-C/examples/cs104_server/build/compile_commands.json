@@ -1,7 +1,0 @@
-[
-{
-  "directory": "/home/ubuntu/Develop/iec104server/lib60870/lib60870-C/examples/cs104_server/build",
-  "command": "/usr/bin/cc  -I/home/ubuntu/Develop/iec104server/lib60870/lib60870-C/examples/cs104_server/. -g -o CMakeFiles/cs104_server.dir/simple_server.o -c /home/ubuntu/Develop/iec104server/lib60870/lib60870-C/examples/cs104_server/simple_server.c",
-  "file": "/home/ubuntu/Develop/iec104server/lib60870/lib60870-C/examples/cs104_server/simple_server.c"
-}
-]

@@ -26,10 +26,10 @@ cd lib60870/lib60870-C
 cd dependencies
 wget https://github.com/Mbed-TLS/mbedtls/archive/refs/tags/v2.28.8.tar.gz
 tar xf v2.28.8.tar.gz
-mv mbedtls-2.28.2/ mbedtls-2.28
+mv mbedtls-2.28.8/ mbedtls-2.28
 cd ..
 mkdir build
 cd build
 cmake -DBUILD_TESTS=NO -DBUILD_EXAMPLES=NO ..
 make
-sudo make install
+make install

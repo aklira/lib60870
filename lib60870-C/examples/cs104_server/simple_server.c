@@ -290,9 +290,21 @@ main(int argc, char** argv)
 
         InformationObject io = (InformationObject) MeasuredValueScaled_create(NULL, 110, scaledValue, IEC60870_QUALITY_GOOD);
 
+        CS101_ASDU_addInformationObject(newAsdu, io = (InformationObject) MeasuredValueScaled_create(NULL, 500, scaledValue++, IEC60870_QUALITY_GOOD));
+        CS101_ASDU_addInformationObject(newAsdu, (InformationObject) MeasuredValueScaled_create((MeasuredValueScaled) io, 501, scaledValue++, IEC60870_QUALITY_GOOD));
+        CS101_ASDU_addInformationObject(newAsdu, (InformationObject) MeasuredValueScaled_create((MeasuredValueScaled) io, 502, scaledValue++, IEC60870_QUALITY_GOOD));
+        CS101_ASDU_addInformationObject(newAsdu, (InformationObject) MeasuredValueScaled_create((MeasuredValueScaled) io, 503, scaledValue++, IEC60870_QUALITY_GOOD));
+        CS101_ASDU_addInformationObject(newAsdu, (InformationObject) MeasuredValueScaled_create((MeasuredValueScaled) io, 504, scaledValue++, IEC60870_QUALITY_GOOD));
+        CS101_ASDU_addInformationObject(newAsdu, (InformationObject) MeasuredValueScaled_create((MeasuredValueScaled) io, 505, scaledValue++, IEC60870_QUALITY_GOOD));
+        CS101_ASDU_addInformationObject(newAsdu, (InformationObject) MeasuredValueScaled_create((MeasuredValueScaled) io, 506, scaledValue++, IEC60870_QUALITY_GOOD));
+        CS101_ASDU_addInformationObject(newAsdu, (InformationObject) MeasuredValueScaled_create((MeasuredValueScaled) io, 507, scaledValue++, IEC60870_QUALITY_GOOD));
+        CS101_ASDU_addInformationObject(newAsdu, (InformationObject) MeasuredValueScaled_create((MeasuredValueScaled) io, 508, scaledValue++, IEC60870_QUALITY_GOOD));
+        CS101_ASDU_addInformationObject(newAsdu, (InformationObject) MeasuredValueScaled_create((MeasuredValueScaled) io, 509, scaledValue++, IEC60870_QUALITY_GOOD));
+        CS101_ASDU_addInformationObject(newAsdu, (InformationObject) MeasuredValueScaled_create((MeasuredValueScaled) io, 510, scaledValue++, IEC60870_QUALITY_GOOD));
+        
         scaledValue++;
 
-        CS101_ASDU_addInformationObject(newAsdu, io);
+        //CS101_ASDU_addInformationObject(newAsdu, io);
 
         InformationObject_destroy(io);
 

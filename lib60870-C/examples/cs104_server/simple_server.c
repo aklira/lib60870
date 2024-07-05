@@ -284,7 +284,7 @@ main(int argc, char** argv)
 
     while (running) {
 
-        Thread_sleep(1000);
+        Thread_sleep(10);
 
         CS101_ASDU newAsdu = CS101_ASDU_create(alParams, false, CS101_COT_PERIODIC, 0, 1, false, false);
         InformationObject io = (InformationObject) MeasuredValueScaled_create(NULL, 110, scaledValue, IEC60870_QUALITY_GOOD);
